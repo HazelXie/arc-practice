@@ -1,0 +1,77 @@
+:root {
+  --bg: #f5f7ff; --card: #fff; --ink: #1f2547; --muted: #5b6285;
+  --brand: #4f46e5; --a: #e11d48; --r: #d97706; --c: #059669;
+  --ok: #059669; --warn: #d97706; --line: #dfe3f5;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 20px/1.55 -apple-system, "SF Pro Rounded", "Avenir Next", "Segoe UI", sans-serif;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+.top {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: var(--brand); color: #fff; padding: 12px 20px; position: sticky; top: 0; z-index: 5;
+}
+.top h1 { font-size: 24px; margin: 0; }
+.top .link { background: rgba(255,255,255,.18); color: #fff; border: 0; border-radius: 12px; padding: 10px 16px; font-size: 18px; min-height: 44px; }
+.progress { font-size: 16px; min-width: 90px; text-align: right; }
+main { max-width: 900px; margin: 0 auto; padding: 20px; }
+h2 { font-size: 28px; margin: 8px 0 4px; }
+.lead { color: var(--muted); margin: 0 0 20px; }
+
+/* home */
+.arcbox { background: var(--card); border: 2px solid var(--line); border-radius: 18px; padding: 16px 20px; margin-bottom: 22px; }
+.arcbox ul { list-style: none; padding: 0; margin: 8px 0 0; }
+.arcbox li { margin: 6px 0; }
+.chip { display: inline-block; width: 34px; height: 34px; line-height: 34px; text-align: center; border-radius: 50%; color: #fff; font-weight: 800; margin-right: 10px; }
+.chip.a { background: var(--a); } .chip.r { background: var(--r); } .chip.c { background: var(--c); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.card {
+  background: var(--card); border: 2px solid var(--line); border-radius: 18px; padding: 18px; text-align: left;
+  font: inherit; color: inherit; cursor: pointer; min-height: 130px;
+}
+.card:active { transform: scale(.98); }
+.card .emoji { font-size: 38px; }
+.card h3 { margin: 6px 0 2px; font-size: 21px; }
+.card small { color: var(--muted); }
+.card.done { border-color: var(--ok); }
+.tick { color: var(--ok); font-weight: 700; }
+
+/* passage */
+.passage { background: var(--card); border: 2px solid var(--line); border-radius: 18px; padding: 18px 22px; margin: 12px 0 20px; }
+.passage h2 { margin-top: 0; }
+.passage p { margin: 0 0 12px; }
+.question { background: #eef0ff; border-left: 8px solid var(--brand); border-radius: 12px; padding: 14px 18px; font-weight: 600; margin-bottom: 16px; }
+.qcount { color: var(--muted); font-size: 16px; font-weight: 600; }
+
+.field { margin-bottom: 16px; }
+.field label { display: block; font-weight: 700; margin-bottom: 4px; }
+.field .tip { color: var(--muted); font-size: 17px; margin: 0 0 6px; }
+.field .chip { width: 30px; height: 30px; line-height: 30px; font-size: 17px; }
+textarea {
+  width: 100%; min-height: 84px; padding: 12px 14px; font: inherit; font-size: 20px;
+  border: 3px solid var(--line); border-radius: 14px; background: #fff; color: var(--ink); resize: vertical;
+}
+textarea:focus { outline: none; }
+#fa:focus { border-color: var(--a); } #fr:focus { border-color: var(--r); } #fc:focus { border-color: var(--c); }
+
+.btns { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0 20px; }
+button.big {
+  font: inherit; font-weight: 700; font-size: 20px; padding: 12px 22px; min-height: 52px;
+  border: 0; border-radius: 14px; background: var(--brand); color: #fff; cursor: pointer;
+}
+button.big.alt { background: #fff; color: var(--brand); border: 3px solid var(--brand); }
+button.big:disabled { opacity: .5; }
+
+.feedback { background: var(--card); border: 2px solid var(--line); border-radius: 18px; padding: 16px 20px; margin-bottom: 20px; }
+.feedback li { list-style: none; margin: 6px 0; }
+.feedback ul { padding: 0; margin: 8px 0 0; }
+.ok { color: var(--ok); } .no { color: var(--warn); }
+.assembled { background: #fffbe8; border: 2px dashed #e6c84a; border-radius: 14px; padding: 12px 16px; margin: 10px 0; }
+.sample { background: #ecfdf5; border: 2px solid #a7f3d0; border-radius: 14px; padding: 12px 16px; }
+.sample b.a { color: var(--a); } .sample b.r { color: var(--r); } .sample b.c { color: var(--c); }
+mark.cite { background: #c7f9df; border-radius: 4px; padding: 0 2px; }
+
+@media (max-width: 600px) { body { font-size: 18px; } main { padding: 14px; } .progress { display: none; } }
